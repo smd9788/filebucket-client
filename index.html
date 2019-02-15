@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>FileBucket</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>FileBucket</h1>
+  <div id='user-message'></div>
+<!-- SIGN-UP FORM -->
+  <h3>Sign Up</h3>
+  <form id='sign-up'>
+    <input type="text" name="credentials[email]" placeholder="Email">
+    <input type="text" name="credentials[password]" placeholder="Password">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
+    <button>Submit</button>
+  </form>
+<!-- SIGN-IN FORM -->
+  <h3>Sign In</h3>
+  <form id='sign-in'>
+    <input type="text" name="credentials[email]" placeholder="Email">
+    <input type="text" name="credentials[password]" placeholder="Password">
+    <button>Sign In</button>
+  </form>
+  <br>
+<!-- IMAGE UPLOAD FORM -->
+  <form id='upload-form' enctype="multipart/form-data">
+    <input name='image' type="file" />
+    <input type="text" placeholder="Title">
+    <input type="submit" />
+  </form>
+  <div id='display-image'></div>
+</body>
+
 </html>
