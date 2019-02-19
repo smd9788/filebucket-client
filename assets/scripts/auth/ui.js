@@ -18,26 +18,9 @@ const onSignInFailure = () => {
   $('#user-message').text('Error on Sign In')
 }
 
-const createUploadSuccess = function (apiResponse) {
-  $('#display-image').html(`<img src='${apiResponse.upload.url}'/>`)
-  console.log(apiResponse)
-}
-
-const createUploadFailure = function () {
-  $('#display-image').html('Something went wrong. Please try again')
-  $('#display-image').addClass('error')
-
-  setTimeout(() => {
-    $('#display-image').html('')
-    $('#display-image').removeClass('error')
-  }, 3000)
-}
-
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInFailure,
-  onSignInSuccess,
-  createUploadSuccess,
-  createUploadFailure
+  onSignInSuccess
 }

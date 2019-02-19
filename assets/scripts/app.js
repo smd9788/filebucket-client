@@ -1,6 +1,7 @@
 'use strict'
 'use strict'
-const events = require('./uploads/events')
+const uploadEvents = require('./uploads/events')
+const authEvents = require('./auth/events')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -8,7 +9,7 @@ const events = require('./uploads/events')
 // require('./example')
 
 $(() => {
-  $('#sign-up').on('submit', events.onSignUp)
-  $('#sign-in').on('submit', events.onSignIn)
-  $('#upload-form').on('submit', events.onCreateUpload)
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#upload-form').on('submit', uploadEvents.onCreateUpload)
 })
