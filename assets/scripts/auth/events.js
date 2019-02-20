@@ -24,7 +24,27 @@ const onSignIn = (event) => {
   $('form').trigger('reset')
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+
+  const formData = getFormFields(event.target)
+  api.changePassword(formData)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure)
+
+  $('form').trigger('reset')
+}
+
+const onSignOut = (event) => {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePassword,
+  onSignOut
 }
