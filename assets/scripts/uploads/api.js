@@ -5,7 +5,7 @@ const store = require('../store')
 const createUpload = function (imageData) {
   return $.ajax({
     contentType: false,
-    url: 'http://localhost:4741/uploads',
+    url: config.apiUrl + '/uploads/',
     method: 'POST',
     processData: false,
     headers: {
