@@ -64,6 +64,12 @@ const onUpdateUploadFailure = function (response) {
   $('#purchase-update input').val('')
 }
 
+const onGetUploadsAfterDeleteSuccess = function (data) {
+  const getUploadsHtml = getUploadsTemplate({ uploads: data.uploads })
+  $('#upload-cards').html(getUploadsHtml)
+  $('#user-message').html('Delete Request Successful')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -75,5 +81,6 @@ module.exports = {
   onDeleteUploadSuccess,
   onDeleteUploadFailure,
   onUpdateUploadSuccess,
-  onUpdateUploadFailure
+  onUpdateUploadFailure,
+  onGetUploadsAfterDeleteSuccess
 }
