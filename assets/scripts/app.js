@@ -13,4 +13,5 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#upload-form').on('submit', uploadEvents.onCreateUpload)
   $('#delete-upload').on('submit', uploadEvents.onDeleteUpload)
+  $('#update-upload').on('submit', uploadEvents.onUpdateUpload)
 })

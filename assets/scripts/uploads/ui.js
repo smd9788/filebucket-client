@@ -44,6 +44,17 @@ const onDeleteUploadFailure = function () {
   $('#purchase-destroy input').val('')
 }
 
+const onUpdateUploadSuccess = function (response) {
+  $('#content').html('')
+  $('#user-message').html('Successfully Updated Purchase')
+  $('#purchase-update input').val('')
+}
+
+const onUpdateUploadFailure = function (response) {
+  $('#user-message').html('Update Request Failed, Please Try Again')
+  $('#purchase-update input').val('')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -52,5 +63,7 @@ module.exports = {
   createUploadSuccess,
   createUploadFailure,
   onDeleteUploadSuccess,
-  onDeleteUploadFailure
+  onDeleteUploadFailure,
+  onUpdateUploadSuccess,
+  onUpdateUploadFailure
 }
