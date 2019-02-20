@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://infinite-ridge-36732.herokuapp.com/',
+  production: 'https://infinite-ridge-36732.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
