@@ -30,7 +30,7 @@ const changePassword = (formData) => {
   })
 }
 
-const onSignOut = () => {
+const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
@@ -44,5 +44,5 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  onSignOut
+  signOut
 }
