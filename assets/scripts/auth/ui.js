@@ -3,6 +3,7 @@ const store = require('../store')
 
 const onSignUpSuccess = (responseData) => {
   $('#user-message').text('Successfully Signed Up')
+  $('#signup-modal').modal('hide')
 }
 
 const onSignUpFailure = () => {
@@ -12,6 +13,7 @@ const onSignUpFailure = () => {
 const onSignInSuccess = (responseData) => {
   $('#user-message').text('Successfully Signed In')
   store.user = responseData.user
+  $('#signin-modal').modal('hide')
 }
 
 const onSignInFailure = () => {
