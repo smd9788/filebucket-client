@@ -16,7 +16,7 @@
 <body>
   <h1>FileBucket</h1>
   <div id='user-message'></div>
-<!-- SIGN-UP FORM -->
+  <!-- SIGN-UP FORM -->
   <h3>Sign Up</h3>
   <form id='sign-up'>
     <input type="text" name="credentials[email]" placeholder="Email">
@@ -24,7 +24,7 @@
     <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
     <button>Submit</button>
   </form>
-<!-- SIGN-IN FORM -->
+  <!-- SIGN-IN FORM -->
   <h3>Sign In</h3>
   <form id='sign-in'>
     <input type="text" name="credentials[email]" placeholder="Email">
@@ -32,11 +32,18 @@
     <button>Sign In</button>
   </form>
   <br>
-<!-- IMAGE UPLOAD FORM -->
+  <!-- IMAGE UPLOAD FORM -->
   <form id='upload-form' enctype="multipart/form-data">
     <input name="image" type="file" />
     <input name="title" type="text" placeholder="Title">
     <input type="submit" />
+  </form>
+
+  <h3>Delete Purchase by ID#</h3>
+  <form id='delete-upload'>
+    <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
+    <br>
+    <button class='form-button' type="submit">Submit</button>
   </form>
 
   <div id='display-image'></div>

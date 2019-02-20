@@ -33,11 +33,24 @@ const createUploadFailure = function () {
   }, 3000)
 }
 
+const onDeleteUploadSuccess = function () {
+  $('#content').html('')
+  $('#user-message').html('')
+  $('#user-message').html('Delete Request Successful')
+}
+
+const onDeleteUploadFailure = function () {
+  $('#user-message').html('Delete Request Failed, Please Try Again')
+  $('#purchase-destroy input').val('')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInFailure,
   onSignInSuccess,
   createUploadSuccess,
-  createUploadFailure
+  createUploadFailure,
+  onDeleteUploadSuccess,
+  onDeleteUploadFailure
 }
