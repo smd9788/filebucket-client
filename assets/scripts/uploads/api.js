@@ -1,6 +1,5 @@
 'use strict'
 const config = require('../config')
-// const store = require('../store.js')
 const store = require('../store')
 
 const createUpload = function (imageData) {
@@ -16,6 +15,17 @@ const createUpload = function (imageData) {
   })
 }
 
+const update = function (id, data) {
+  return $.ajax({
+    url: config.apiUrl + '/uploads/' + id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'PATCH',
+    data: data
+  })
+}
+
 const destroy = function (id) {
   return $.ajax({
     url: config.apiUrl + '/uploads/' + id,
@@ -28,5 +38,6 @@ const destroy = function (id) {
 
 module.exports = {
   createUpload,
-  destroy
+  destroy,
+  update
 }
