@@ -4,11 +4,17 @@ const ui = require('./ui')
 
 const onCreateUpload = function (event) {
   event.preventDefault()
-
   const imageData = new FormData(event.target)
-
   api.createUpload(imageData)
     .then(ui.createUploadSuccess)
+    .catch(ui.failure)
+}
+
+const onGetUploads = (uploadData) => {
+  event.preventDefault()
+  console.log(uploadData)
+  api.getUploads(uploadData)
+    .then(ui.getUploadsSuccess)
     .catch(ui.failure)
 }
 
@@ -34,6 +40,6 @@ const onUpdateUpload = function (event) {
 module.exports = {
   onCreateUpload,
   onDeleteUpload,
-  onUpdateUpload
-
+  onUpdateUpload,
+  onGetUploads
 }

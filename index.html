@@ -33,6 +33,9 @@
           <li class="nav-item">
             <button id="sign-out-button" class="btn m-2 menu-item nav-active" type="button">Logout</button>
           </li>
+          <li class="nav-item">
+            <button id="get-uploads-button" class="btn m-2 menu-item nav-active" type="button">Uploads</button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -150,6 +153,9 @@
     <br>
     <button class='form-button' type="submit">Submit</button>
   </form>
+
+  <!-- This is where uploaded images will render as cards with Handlebars template -->
+  <div class="card-deck" id="upload-cards"></div>
 
   <h3>Delete Upload</h3>
   <form id='delete-upload'>

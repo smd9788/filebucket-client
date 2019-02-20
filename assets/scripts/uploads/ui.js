@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const getUploadsTemplate = require('../templates/get-uploads.handlebars')
 
 const onSignUpSuccess = (responseData) => {
   $('#user-message').text('Successfully Signed Up')
@@ -33,6 +34,14 @@ const createUploadFailure = function () {
   }, 3000)
 }
 
+const getUploadsSuccess = (data) => {
+  console.log('data is', data)
+  const getUploadsHtml = getUploadsTemplate({
+    uploads: data.uploads
+  })
+  $('#upload-cards').html(getUploadsHtml)
+}
+
 const onDeleteUploadSuccess = function () {
   $('#content').html('')
   $('#user-message').html('')
@@ -62,6 +71,7 @@ module.exports = {
   onSignInSuccess,
   createUploadSuccess,
   createUploadFailure,
+  getUploadsSuccess,
   onDeleteUploadSuccess,
   onDeleteUploadFailure,
   onUpdateUploadSuccess,

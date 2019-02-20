@@ -24,6 +24,13 @@ const update = function (id, data) {
     method: 'PATCH',
     data: data
   })
+const getUploads = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/uploads',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }})
 }
 
 const destroy = function (id) {
@@ -39,5 +46,6 @@ const destroy = function (id) {
 module.exports = {
   createUpload,
   destroy,
-  update
+  update,
+  getUploads
 }
