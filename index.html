@@ -134,6 +134,7 @@
 
   <div id='user-message'></div>
   <!-- IMAGE UPLOAD FORM -->
+  Create Upload
   <form id='upload-form' enctype="multipart/form-data">
     <input name="image" type="file" />
     <input name="title" type="text" placeholder="Title">
@@ -142,10 +143,10 @@
 
   <h3>Update Upload</h3>
   <form id='update-upload'>
-    <input class='form' name="update[id]" type="text" placeholder='Upload ID#' required>
+    <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
     <br>
-    <input class='form' name="update[title]" type="text" placeholder='Updated Title' required>
-    <input class='form' name="update[tag]" type="text" placeholder='Updated Tag' required>
+    <input class='form' name="upload[title]" type="text" placeholder='Updated Title' required>
+    <input class='form' name="upload[tag]" type="text" placeholder='Updated Tag'>
     <br>
     <button class='form-button' type="submit">Submit</button>
   </form>
