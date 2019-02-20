@@ -140,7 +140,20 @@
   Create Upload
   <form id='upload-form' enctype="multipart/form-data">
     <input name="image" type="file" />
-    <input name="title" type="text" placeholder="Title">
+    <input name="title" type="text" placeholder="Title" required>
+    <select name="tag">
+      <option value="" disabled selected>Select Tag</option>
+      <option value="Vacation">Vacation</option>
+      <option value="Food">Food</option>
+      <option value="Nature">Nature</option>
+      <option value="Sports">Sports</option>
+      <option value="Hobbies">Hobbies</option>
+      <option value="Pets">Pets</option>
+      <option value="Pop-Culture">Pop-Culture</option>
+      <option value="Lifestyle">Lifestyle</option>
+      <option value="Tech">Tech</option>
+      <option value="Miscellaneous">Miscellaneous</option>
+    </select>
     <input type="submit" />
   </form>
 
@@ -149,7 +162,19 @@
     <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
     <br>
     <input class='form' name="upload[title]" type="text" placeholder='Updated Title' required>
-    <input class='form' name="upload[tag]" type="text" placeholder='Updated Tag'>
+    <select name="upload[tag]">
+      <option value="" disabled selected>Update Tag</option>
+      <option value="Vacation">Vacation</option>
+      <option value="Food">Food</option>
+      <option value="Nature">Nature</option>
+      <option value="Sports">Sports</option>
+      <option value="Hobbies">Hobbies</option>
+      <option value="Pets">Pets</option>
+      <option value="Pop-Culture">Pop-Culture</option>
+      <option value="Lifestyle">Lifestyle</option>
+      <option value="Tech">Tech</option>
+      <option value="Miscellaneous">Miscellaneous</option>
+    </select>
     <br>
     <button class='form-button' type="submit">Submit</button>
   </form>
