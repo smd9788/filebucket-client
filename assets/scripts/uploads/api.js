@@ -16,6 +16,15 @@ const createUpload = function (imageData) {
   })
 }
 
+const getUploads = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/uploads',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }})
+}
+
 const destroy = function (id) {
   return $.ajax({
     url: config.apiUrl + '/uploads/' + id,
@@ -28,5 +37,6 @@ const destroy = function (id) {
 
 module.exports = {
   createUpload,
+  getUploads,
   destroy
 }

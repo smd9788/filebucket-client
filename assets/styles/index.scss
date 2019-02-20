@@ -8,6 +8,7 @@ body {
   background: $secondary-color;
   color: $primary-color;
   font-family: 'Nunito', sans-serif;
+  margin: 0;
 }
 
 nav {
@@ -31,4 +32,11 @@ nav {
 .btn {
   background-color: $secondary-color;
   color: $primary-color;
+}
+
+.card-img-top {
+  height: 200px;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
