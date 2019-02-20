@@ -27,11 +27,13 @@ const onDeleteUpload = function (event) {
     .catch(ui.onDeleteUploadFailure)
 }
 
-const onUpdateUpload = function (event) {
+const onUpdateUpload = (event) => {
   event.preventDefault()
+  console.log('event is', event)
   const data = getFormFields(event.target)
-  const id = data.upload.id
-
+  const id = event.target[3].dataset.id
+  console.log('data is', data)
+  console.log('id is', id)
   api.update(id, data)
     .then(ui.onUpdateUploadSuccess)
     .catch(ui.onUpdateUploadFailure)

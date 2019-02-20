@@ -57,6 +57,7 @@ const onUpdateUploadSuccess = function (response) {
   $('#content').html('')
   $('#user-message').html('Successfully Updated Purchase')
   $('#purchase-update input').val('')
+  $('#edit-upload-modal').modal('hide')
 }
 
 const onUpdateUploadFailure = function (response) {
