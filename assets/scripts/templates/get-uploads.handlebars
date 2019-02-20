@@ -1,15 +1,22 @@
 {{#each uploads as |upload|}}
-  <div class="col-sm-6 col-md-4 col-xl-3">
+
+  <div class="col-sm-6 col-md-4 col-xl-3" data-id="{{upload._id}}">
     <div class="card" style="width: 15rem;">
       <img class="card-img-top" src="{{upload.url}}" alt="Card image cap">
       <div class="card-body">
-        <section data-id="{{upload.id}}">
-          <h6 class="card-title" data-id="{{upload.id}}">{{upload.title}}</h6>
+        <section data-id="{{upload._id}}">
+          <h6 class="card-title" data-id="{{upload._id}}">{{upload.title}}</h6>
           <p class="card-createDate">created on:{{upload.createdAt}}</p>
           <p class="card-updateDate">updated on:{{upload.updatedAt}}</p>
-          <form class="edit-title" data-id="{{upload.id}}">
+          <p class="card-tag">tag: {{upload.tag}}</p>
+          <form class="edit-title" data-id="{{upload._id}}">
             <button type="submit" class="btn btn-default">Edit</button>
           </form>
+          <button id='delete'>Delete</button>
+
+
+
+
         </section>
       </div>
     </div>

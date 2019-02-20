@@ -37,9 +37,24 @@ const onUpdateUpload = function (event) {
     .catch(ui.onUpdateUploadFailure)
 }
 
+const onGetUploadsAfterDelete = function () {
+  api.getUploads()
+    .then(ui.onGetUploadsAfterDeleteSuccess)
+    .catch(ui.onGetUploadsFailure)
+}
+
+const onHandlebarDelete = (event) => {
+  event.preventDefault()
+  const target = $(event.target).closest('section').data('id')
+  api.destroy(target)
+    .then(() => onGetUploadsAfterDelete())
+    .catch(ui.onDeletePurchaseFailure)
+}
+
 module.exports = {
   onCreateUpload,
   onDeleteUpload,
   onUpdateUpload,
-  onGetUploads
+  onGetUploads,
+  onHandlebarDelete
 }
