@@ -14,24 +14,125 @@
 </head>
 
 <body>
-  <h1>FileBucket</h1>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="d-flex flex-grow-1 text-left">
+        <a class="navbar-brand d-none d-lg-inline-block" href="#">fileBucket</a>
+      </div>
+      <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item">
+            <button id="sign-up-button" type="button" class="btn m-2 menu-item nav-active" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
+          </li>
+          <li class="nav-item">
+            <button id="sign-in-button" type="button" class="btn m-2 menu-item nav-active" data-toggle="modal" data-target="#signin-modal">Sign In</button>
+          </li>
+          <li class="nav-item">
+            <button id="change-password-button" type="button" class="btn m-2 menu-item nav-active" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+          </li>
+          <li class="nav-item">
+            <button id="sign-out-button" class="btn m-2 menu-item nav-active" type="button">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- modal for sign up-->
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form id="sign-up" class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <p class="fas fa-envelope prefix grey-text"></p>
+            <input type="email" id="signUpForm-email" class="form-control validate" name="credentials[email]" autocomplete="on">
+            <label data-error="wrong" data-success="right" for="signUpForm-email">Your email</label>
+          </div>
+          <div class="md-form mb-4">
+            <p class="fas fa-lock prefix grey-text"></p>
+            <input type="password" id="signUpForm-password" class="form-control validate" name="credentials[password]" autocomplete="off">
+            <label data-error="wrong" data-success="right" for="signUpForm-password">Your password</label>
+          </div>
+          <div class="md-form mb-4">
+            <p class="fas fa-lock prefix grey-text"></p>
+            <input type="password" id="signUpForm-confirmPassword" class="form-control validate" name="credentials[password_confirmation]" autocomplete="off">
+            <label data-error="wrong" data-success="right" for="signUpForm-confirmPassword">Confirm Password</label>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-deep-orange">Sign up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- modal for sign in -->
+  <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form id="sign-in" class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <p class="fas fa-envelope prefix grey-text"></p>
+            <input type="email" id="signInForm-email" class="form-control validate" name="credentials[email]" autocomplete="on">
+            <label data-error="wrong" data-success="right" for="signInForm-email">Your email</label>
+          </div>
+
+          <div class="md-form mb-4">
+            <p class="fas fa-lock prefix grey-text"></p>
+            <input type="password" id="signInForm-password" class="form-control validate" name="credentials[password]" autocomplete="off">
+            <label data-error="wrong" data-success="right" for="signInForm-password">Your password</label>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-default">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- modal for change password -->
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form id="change-password" class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Change Password</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-4">
+            <p class="fas fa-lock prefix grey-text"></p>
+            <input type="password" id="change-password-form-old" class="form-control validate" name="passwords[old]" autocomplete="off">
+            <label data-error="wrong" data-success="right" for="change-password-form-old">Old Password</label>
+          </div>
+          <div class="md-form mb-4">
+            <p class="fas fa-lock prefix grey-text"></p>
+            <input type="password" id="change-password-form-new" name="passwords[new]" class="form-control validate" autocomplete="off">
+            <label data-error="wrong" data-success="right" for="change-password-form-new">New Password</label>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-default">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div id='user-message'></div>
-  <!-- SIGN-UP FORM -->
-  <h3>Sign Up</h3>
-  <form id='sign-up'>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="text" name="credentials[password]" placeholder="Password">
-    <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
-    <button>Submit</button>
-  </form>
-  <!-- SIGN-IN FORM -->
-  <h3>Sign In</h3>
-  <form id='sign-in'>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="text" name="credentials[password]" placeholder="Password">
-    <button>Sign In</button>
-  </form>
-  <br>
   <!-- IMAGE UPLOAD FORM -->
   <form id='upload-form' enctype="multipart/form-data">
     <input name="image" type="file" />
