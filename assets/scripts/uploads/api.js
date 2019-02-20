@@ -24,6 +24,8 @@ const update = function (id, data) {
     method: 'PATCH',
     data: data
   })
+}
+
 const getUploads = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/uploads',
