@@ -137,15 +137,19 @@
 
   <div id='user-message'></div>
   <!-- IMAGE UPLOAD FORM -->
+  Create Upload
   <form id='upload-form' enctype="multipart/form-data">
     <input name="image" type="file" />
     <input name="title" type="text" placeholder="Title">
     <input type="submit" />
   </form>
 
-  <h3>Delete Purchase by ID#</h3>
-  <form id='delete-upload'>
+  <h3>Update Upload</h3>
+  <form id='update-upload'>
     <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
+    <br>
+    <input class='form' name="upload[title]" type="text" placeholder='Updated Title' required>
+    <input class='form' name="upload[tag]" type="text" placeholder='Updated Tag'>
     <br>
     <button class='form-button' type="submit">Submit</button>
   </form>
@@ -153,6 +157,12 @@
   <!-- This is where uploaded images will render as cards with Handlebars template -->
   <div class="card-deck" id="upload-cards"></div>
 
+  <h3>Delete Upload</h3>
+  <form id='delete-upload'>
+    <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
+    <br>
+    <button class='form-button' type="submit">Submit</button>
+  </form>
   <div id='display-image'></div>
 
 </body>

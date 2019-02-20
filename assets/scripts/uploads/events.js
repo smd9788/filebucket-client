@@ -27,8 +27,19 @@ const onDeleteUpload = function (event) {
     .catch(ui.onDeleteUploadFailure)
 }
 
+const onUpdateUpload = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const id = data.upload.id
+
+  api.update(id, data)
+    .then(ui.onUpdateUploadSuccess)
+    .catch(ui.onUpdateUploadFailure)
+}
+
 module.exports = {
   onCreateUpload,
-  onGetUploads,
-  onDeleteUpload
+  onDeleteUpload,
+  onUpdateUpload,
+  onGetUploads
 }
