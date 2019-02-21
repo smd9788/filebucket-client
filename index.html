@@ -23,13 +23,16 @@
       <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
         <ul class="navbar-nav ml-auto flex-nowrap">
           <li class="nav-item">
-            <button id="change-password-button" type="button" class="btn m-2 menu-item nav-active" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+            <button id="change-password-button" type="button" class="btn m-2 menu-item nav-active dash-nav" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
           </li>
           <li class="nav-item">
-            <button id="sign-out-button" class="btn m-2 menu-item nav-active" type="button">Logout</button>
+            <button id="sign-out-button" class="btn m-2 menu-item nav-active dash-nav" type="button">Logout</button>
           </li>
           <li class="nav-item">
-            <button id="get-uploads-button" class="btn m-2 menu-item nav-active" type="button">Uploads</button>
+            <button id="get-uploads-button" class="btn m-2 menu-item nav-active dash-nav" type="button">Uploads</button>
+          </li>
+          <li class="nav-item">
+            <button id="mystuff" class="btn m-2 menu-item nav-active dash-nav" type="button">My Uploads</button>
           </li>
         </ul>
       </div>
@@ -42,11 +45,7 @@
       <h5 class="display-4 user-sign-up">Sign Up:</h5>
 
 
-                    <form id="sign-up" class="user-sign-up">
-                <div class="form-group">
-                  <label>Name:</label>
-                  <input type="string" name="credentials[name]" class="form-control" placeholder="Enter Full Name">
-                </div>
+              <form id="sign-up" class="user-sign-up">
                 <div class="form-group">
                   <label>Email:</label>
                   <input type="email" name="credentials[email]" class="form-control" placeholder="Enter Email">
@@ -117,7 +116,6 @@
   </div>
 
 <div class="main-container container">
-  <div id='user-message'></div>
   <!-- IMAGE UPLOAD FORM -->
   Create Upload
   <form id='upload-form' enctype="multipart/form-data">
@@ -138,41 +136,9 @@
     </select>
     <input type="submit" />
   </form>
-
-  <h3>Update Upload</h3>
-  <form id='update-upload'>
-    <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
-    <br>
-    <input class='form' name="upload[title]" type="text" placeholder='Updated Title' required>
-    <select name="upload[tag]">
-      <option value="" disabled selected>Update Tag</option>
-      <option value="Vacation">Vacation</option>
-      <option value="Food">Food</option>
-      <option value="Nature">Nature</option>
-      <option value="Sports">Sports</option>
-      <option value="Hobbies">Hobbies</option>
-      <option value="Pets">Pets</option>
-      <option value="Pop-Culture">Pop-Culture</option>
-      <option value="Lifestyle">Lifestyle</option>
-      <option value="Tech">Tech</option>
-      <option value="Miscellaneous">Miscellaneous</option>
-    </select>
-    <br>
-    <button class='form-button' type="submit">Submit</button>
-  </form>
-
-  <!-- This is where uploaded images will render as cards with Handlebars template -->
-  <div class="card-deck" id="upload-cards"></div>
-
-  <h3>Delete Upload</h3>
-  <form id='delete-upload'>
-    <input class='form' name="upload[id]" type="text" placeholder='Upload ID#' required>
-    <br>
-    <button class='form-button' type="submit">Submit</button>
-  </form>
-  <div id='display-image'></div>
 </div>
-  <button id='mystuff'>mystuff</button>
+
+<div class="card-deck" id="upload-cards"></div>
 </body>
 
 </html>

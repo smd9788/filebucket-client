@@ -14,6 +14,7 @@ $(() => {
 
   $('.user-sign-in').hide()
   $('.main-container').hide()
+  $('.dash-nav').hide()
 
   // Toggle Sign-up/in
   $('#toggle-sign-in-btn').on('click', function () {
@@ -30,9 +31,7 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#get-uploads-button').on('click', uploadEvents.onGetUploads)
-  $('#upload-form').on('submit', uploadEvents.onCreateUpload)
-  $('#delete-upload').on('submit', uploadEvents.onDeleteUpload)
-  $('body').on('click', '#delete', uploadEvents.onHandlebarDelete)
-  $('body').on('submit', '#edit-upload-modal-form', uploadEvents.onUpdateUpload)
+  $('body').on('click', '.delete', uploadEvents.onHandlebarDelete)
+  $('body').on('submit', '.edit-upload-modal-form', uploadEvents.onUpdateUpload)
   $('#mystuff').on('click', uploadEvents.onGetMyStuff)
 })
