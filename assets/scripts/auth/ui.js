@@ -3,13 +3,12 @@ const store = require('../store')
 
 const onSignUpSuccess = (responseData) => {
   $('.alert').alert('close')
-  $('#user-message').text('Successfully Signed Up')
-  $('#signup-modal').modal('hide')
+  $('.jumbotron').append('<div class="alert alert-success" role="alert">You\'ve successfully signed-up! Sign in to get started.</div>')
 }
 
 const onSignUpFailure = () => {
   $('.alert').alert('close')
-  $('#user-message').text('Error on Sign Up')
+  $('.jumbotron').append('<div class="alert alert-warning" role="alert">Something went wrong while signing you up. Please check your network connection and try again.</div>')
 }
 
 const onSignInSuccess = (responseData) => {
@@ -18,14 +17,14 @@ const onSignInSuccess = (responseData) => {
   $('.home-container').hide()
   $('.jumbotron').hide()
   $('body').append('<div class="alert alert-success" role="alert">Signed In!</div>')
-
+  $('.dash-nav').show()
   $('.main-container').show()
   store.user = responseData.user
 }
 
 const onSignInFailure = () => {
   $('.alert').alert('close')
-  $('#user-message').text('Error on Sign In')
+  $('.jumbotron').append('<div class="alert alert-danger" role="alert">Something went wrong while signing you in. Please check your network connection and try again.</div>')
 }
 
 const onChangePasswordSuccess = () => {
@@ -44,9 +43,10 @@ const onSignOutSuccess = () => {
   $('.main-container').hide()
   $('body').css('background-image', 'url("public/background.jpg")')
   $('.home-container').show()
+  $('.dash-nav').hide()
   $('.jumbotron').show()
 
-  $('body').append('<div class="alert alert-warning" role="alert">Signed Out.</div>')
+  $('.jumbotron').append('<div class="alert alert-warning" role="alert">Signed Out.</div>')
 }
 
 module.exports = {

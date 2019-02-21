@@ -28,7 +28,7 @@ const onDeleteUpload = function (event) {
 }
 
 const onGetUploadsAfterDelete = function () {
-  api.getUploads()
+  api.getOwnerUploads()
     .then(ui.onGetUploadsAfterDeleteSuccess)
     .catch(ui.onGetUploadsFailure)
 }
