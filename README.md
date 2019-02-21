@@ -117,5 +117,5 @@ Update get image route
   - API specific
     - `git push heroku master`
 
-### Unsolved Problems and Furure Work
+### Unsolved Problems and Future Work
 * Fix AWS deployment issue
