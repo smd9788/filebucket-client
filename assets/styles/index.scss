@@ -34,11 +34,26 @@ nav {
   color: $primary-color;
 }
 
+.card {
+  margin: 0;
+  padding: 0;
+  width: 20rem;
+}
+
+.card-body {
+  line-height: normal;
+  width: 20rem;
+}
+
 .card-img-top {
-  height: 200px;
+  height: 20rem;
   margin-top: 8px;
   vertical-align: middle;
-  width: 100%;
+  width: 20rem;
+}
+
+.card-title {
+  font-size: 2rem;
 }
 
 .home-container {
