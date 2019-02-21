@@ -1,27 +1,12 @@
 'use strict'
-const store = require('../store')
+
 const getUploadsTemplate = require('../templates/get-uploads.handlebars')
 const getAllUploadsTemplate = require('../templates/get-all-uploads.handlebars')
 
-const onSignUpSuccess = (responseData) => {
-  $('#user-message').text('Successfully Signed Up')
-}
-
-const onSignUpFailure = () => {
-  $('#user-message').text('Error on Sign Up')
-}
-
-const onSignInSuccess = (responseData) => {
-  $('#user-message').text('Successfully Signed In')
-  store.user = responseData.user
-}
-
-const onSignInFailure = () => {
-  $('#user-message').text('Error on Sign In')
-}
-
 const createUploadSuccess = function (apiResponse) {
-  $('#display-image').html(`<img src='${apiResponse.upload.url}'/>`)
+  $('.alert').alert('close')
+
+  $('#upload-cards').html(`<img src='${apiResponse.upload.url}'/>`)
   console.log(apiResponse)
 }
 
@@ -83,10 +68,6 @@ const onGetUploadsAfterDeleteSuccess = function (data) {
 }
 
 module.exports = {
-  onSignUpSuccess,
-  onSignUpFailure,
-  onSignInFailure,
-  onSignInSuccess,
   createUploadSuccess,
   createUploadFailure,
   getUploadsSuccess,
