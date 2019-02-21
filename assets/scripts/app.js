@@ -9,6 +9,22 @@ const authEvents = require('./auth/events')
 // require('./example')
 
 $(() => {
+  // Background image on page load
+  $('body').css('background-image', 'url("public/background.jpg")')
+
+  $('.user-sign-in').hide()
+  $('.main-container').hide()
+
+  // Toggle Sign-up/in
+  $('#toggle-sign-in-btn').on('click', function () {
+    $('.user-sign-up').hide()
+    $('.user-sign-in').show()
+  })
+  $('#toggle-sign-up-btn').on('click', function () {
+    $('.user-sign-in').hide()
+    $('.user-sign-up').show()
+  })
+
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out-button').on('click', authEvents.onSignOut)

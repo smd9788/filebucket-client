@@ -14,9 +14,13 @@ const onSignUpFailure = () => {
 
 const onSignInSuccess = (responseData) => {
   $('.alert').alert('close')
-  $('#user-message').text('Successfully Signed In')
+  $('body').css('background-image', '')
+  $('.home-container').hide()
+  $('.jumbotron').hide()
+  $('body').append('<div class="alert alert-success" role="alert">Signed In!</div>')
+
+  $('.main-container').show()
   store.user = responseData.user
-  $('#signin-modal').modal('hide')
 }
 
 const onSignInFailure = () => {
@@ -37,6 +41,10 @@ const onChangePasswordFailure = () => {
 
 const onSignOutSuccess = () => {
   $('.alert').alert('close')
+  $('.main-container').hide()
+  $('body').css('background-image', 'url("public/background.jpg")')
+  $('.home-container').show()
+  $('.jumbotron').show()
 
   $('body').append('<div class="alert alert-warning" role="alert">Signed Out.</div>')
 }
