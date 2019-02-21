@@ -1,4 +1,72 @@
-## Commits
+# FileBucket
+FileBucket is an app that allows users to upload images onto a virtual file
+system. Users can view images from other users and edit/delete their own content.
+
+### Links
+* [GitHub Client Repository](https://github.com/honeybunchesofgoats/filebucket-client)
+* [GitHub API Repository](https://github.com/honeybunchesofgoats/file-bucket-api)
+* [Deployed Client](https://honeybunchesofgoats.github.io/filebucket-client/)
+* [Deployed API](https://infinite-ridge-36732.herokuapp.com)
+
+### Wireframes
+![wireframe](https://i.imgur.com/ANLpVdt.jpg)
+
+### User Stories
+* As an unregistered user, I would like to sign up with email and password.
+* As a registered user, I would like to sign in with email and password.
+* As a signed in user, I would like to change password.
+* As a signed in user, I would like to sign out.
+* As a signed in user, I would like to upload an image to AWS.
+* As a signed in user, I would like to update the meta-data of my image on AWS.
+* As a signed in user, I would like to delete my image from AWS.
+* As a signed in user, I would like to download images from AWS.
+* As a signed in user, I would like to see the name of all images on AWS.
+* As a signed in user, I would like to see the thumbnail of all images on AWS.
+* As a signed in user, I would like to see the following meta-data for any image:
+  - date created/uploaded
+  - date modified
+  - owner (user who uploaded the image)
+  - tag
+
+### Technologies Used
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Ajax
+* Bootstrap
+* Git
+* GitHub
+* Heroku
+* MongoDB
+* Mongoose
+
+### Development Process
+* Establish commit process and Git workflow (see below)
+* Layout Back-end
+  - Create GitHub repository for API
+  - Setup API from template
+  - Commit to GitHub and deply to Heroku
+* Layout Front-end
+  - Create GitHub repository
+  - Setup browser template
+  - Commit to GitHub
+* Setup Back-end
+  - Set up schema and test using curl scripts
+  - Setup relationship between User and Upload collections
+  - Setup Heroku for hosting API
+  - Setup AWS for hosting images
+* Setup Front-end
+  - Create basic front-end components for auth and test in browser
+  - Create basic front-end components for resources and test in browser
+* Utilize pair programming to build out front-end and back-end
+* Testing
+  - Component testing and end-to-end user testing
+* Styling
+  - Focus on displaying information to meet MVP
+
+
+### Commit Process
 * Must be present tense
 * End with blank line
 * `git add` relevant files for the commit
@@ -13,11 +81,7 @@ Update get image route
 - Issue with catching error messages
     <blank line here>
 ```
-## Branch Naming
-
-
-## General Git Workflow
-
+### General Git Workflow
 * Create feature branch
   - `git checkout develpment`
   - `git pull origin development`
@@ -39,9 +103,7 @@ Update get image route
 * Other features
   - `git fetch origin` to see what exists on the remote server. After that, you can checkout a branch.
 
-
-## Deploying
-
+### Deploy Process
 * General
   - `git checkout develpment`
   - `git pull origin development`
@@ -54,3 +116,6 @@ Update get image route
     - `grunt deploy`
   - API specific
     - `git push heroku master`
+
+### Unsolved Problems and Future Work
+* Fix AWS deployment issue
