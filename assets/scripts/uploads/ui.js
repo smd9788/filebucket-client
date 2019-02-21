@@ -53,11 +53,12 @@ const onDeleteUploadFailure = function () {
   $('#purchase-destroy input').val('')
 }
 
-const onUpdateUploadSuccess = function (response) {
+const onUpdateUploadSuccess = function (id, data, event) {
   $('#content').html('')
   $('#user-message').html('Successfully Updated Purchase')
-  $('#purchase-update input').val('')
-  $('#edit-upload-modal').modal('hide')
+  $('.modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
 }
 
 const onUpdateUploadFailure = function (response) {
@@ -69,6 +70,7 @@ const onGetUploadsAfterDeleteSuccess = function (data) {
   const getUploadsHtml = getUploadsTemplate({ uploads: data.uploads })
   $('#upload-cards').html(getUploadsHtml)
   $('#user-message').html('Delete Request Successful')
+  $('.modal').modal('hide')
 }
 
 module.exports = {
