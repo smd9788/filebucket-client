@@ -28,9 +28,9 @@ const onSignInFailure = () => {
 }
 
 const onChangePasswordSuccess = () => {
-  $('.alert').alert('close')
-  $('body').append('<div class="alert alert-success">Password changed successfuly</div>')
   $('#change-password-modal').modal('hide')
+  $('body').append('<div class="alert alert-success">Password changed successfuly</div>')
+  setTimeout(function () { $('.alert').alert('close') }, 3000)
 }
 
 const onChangePasswordFailure = () => {

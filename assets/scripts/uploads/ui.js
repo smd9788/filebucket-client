@@ -38,8 +38,9 @@ const getAllUploadsSuccess = (data) => {
 
 const onDeleteUploadSuccess = function () {
   $('#content').html('')
-  $('#user-message').html('')
-  $('#user-message').html('Delete Request Successful')
+  $('body').append('<div class="alert alert-danger">Delete Success</div>')
+
+  setTimeout(function () { $('.alert').alert('close') }, 3000)
 }
 
 const onDeleteUploadFailure = function () {
@@ -63,7 +64,7 @@ const onUpdateUploadFailure = function (response) {
 const onGetUploadsAfterDeleteSuccess = function (data) {
   const getUploadsHtml = getUploadsTemplate({ uploads: data.uploads })
   $('#upload-cards').html(getUploadsHtml)
-  $('#user-message').html('Delete Request Successful')
+
   $('.modal').modal('hide')
 }
 
