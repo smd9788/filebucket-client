@@ -27,20 +27,22 @@ const onDeleteUpload = function (event) {
     .catch(ui.onDeleteUploadFailure)
 }
 
-const onUpdateUpload = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const id = data.upload.id
-
-  api.update(id, data)
-    .then(ui.onUpdateUploadSuccess)
-    .catch(ui.onUpdateUploadFailure)
-}
-
 const onGetUploadsAfterDelete = function () {
   api.getUploads()
     .then(ui.onGetUploadsAfterDeleteSuccess)
     .catch(ui.onGetUploadsFailure)
+}
+
+const onUpdateUpload = (event) => {
+  event.preventDefault()
+  console.log('event is', event)
+  const data = getFormFields(event.target)
+  const id = event.target[3].dataset.id
+  console.log('data is', data)
+  api.update(id, data, event)
+    .then(ui.onUpdateUploadSuccess)
+    .then(() => onGetUploadsAfterDelete())
+    .catch(ui.onUpdateUploadFailure)
 }
 
 const onHandlebarDelete = (event) => {
