@@ -8,14 +8,14 @@ body {
   background: $secondary-color;
   color: $primary-color;
   font-family: $primary-font;
-  margin: 0;
+  // margin: 0;
 }
 
 nav {
   background-color: $primary-color;
   font-size: 1.5rem;
   height: 6rem;
-  margin: 1px 0;
+  // margin: 1px 0;
 }
 
 .navbar-brand {
@@ -40,3 +40,9 @@ nav {
   vertical-align: middle;
   width: 100%;
 }
+
+.home-container {
+    margin-top: 3vh;
+    height: 97vh;
+    width: 50vw;
+  }
