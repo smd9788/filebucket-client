@@ -18,4 +18,5 @@ $(() => {
   $('#delete-upload').on('submit', uploadEvents.onDeleteUpload)
   $('body').on('click', '#delete', uploadEvents.onHandlebarDelete)
   $('body').on('submit', '#edit-upload-modal-form', uploadEvents.onUpdateUpload)
+  $('#mystuff').on('click', uploadEvents.onGetMyStuff)
 })
