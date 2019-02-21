@@ -14,7 +14,7 @@ const onGetUploads = (uploadData) => {
   event.preventDefault()
   console.log(uploadData)
   api.getUploads(uploadData)
-    .then(ui.getUploadsSuccess)
+    .then(ui.getAllUploadsSuccess)
     .catch(ui.failure)
 }
 
@@ -53,10 +53,19 @@ const onHandlebarDelete = (event) => {
     .catch(ui.onDeletePurchaseFailure)
 }
 
+const onGetMyStuff = (uploadData) => {
+  event.preventDefault()
+  console.log(uploadData)
+  api.getOwnerUploads(uploadData)
+    .then(ui.getUploadsSuccess)
+    .catch(ui.failure)
+}
+
 module.exports = {
   onCreateUpload,
   onDeleteUpload,
   onUpdateUpload,
   onGetUploads,
-  onHandlebarDelete
+  onHandlebarDelete,
+  onGetMyStuff
 }

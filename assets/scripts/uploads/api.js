@@ -35,6 +35,15 @@ const getUploads = function (formData) {
     }})
 }
 
+const getOwnerUploads = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/uploads/all',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }})
+}
+
 const destroy = function (id) {
   return $.ajax({
     url: config.apiUrl + '/uploads/' + id,
@@ -49,5 +58,6 @@ module.exports = {
   createUpload,
   destroy,
   update,
-  getUploads
+  getUploads,
+  getOwnerUploads
 }
