@@ -16,7 +16,7 @@ const onSignInSuccess = (responseData) => {
   $('body').css('background-image', '')
   $('.home-container').hide()
   $('.jumbotron').hide()
-  $('body').append('<div class="alert alert-success" role="alert">Signed In!</div>')
+  $('body').append('<div class="alert alert-success" role="alert">Signed In!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
   $('.dash-nav').show()
   $('.main-container').show()
   store.user = responseData.user
@@ -45,8 +45,9 @@ const onSignOutSuccess = () => {
   $('.home-container').show()
   $('.dash-nav').hide()
   $('.jumbotron').show()
+  $('#upload-cards').empty()
 
-  $('.jumbotron').append('<div class="alert alert-warning" role="alert">Signed Out.</div>')
+  $('.jumbotron').append('<div class="alert alert-warning" role="alert">Signed Out.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
 }
 
 module.exports = {
