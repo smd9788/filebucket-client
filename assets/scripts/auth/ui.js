@@ -20,6 +20,10 @@ const onSignInSuccess = (responseData) => {
   $('.dash-nav').show()
   $('.main-container').show()
   store.user = responseData.user
+
+  setTimeout(() => {
+    $('.alert').alert('close')
+  }, 3000)
 }
 
 const onSignInFailure = () => {

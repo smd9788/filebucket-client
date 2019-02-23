@@ -4,10 +4,14 @@ const ui = require('./ui')
 
 const onCreateUpload = function (event) {
   event.preventDefault()
+
   const imageData = new FormData(event.target)
+
   api.createUpload(imageData)
     .then(ui.createUploadSuccess)
     .catch(ui.failure)
+
+  $('form').trigger('reset')
 }
 
 const onGetUploads = (uploadData) => {
@@ -35,14 +39,16 @@ const onGetUploadsAfterDelete = function () {
 
 const onUpdateUpload = (event) => {
   event.preventDefault()
-  console.log('event is', event)
+
   const data = getFormFields(event.target)
   const id = event.target[3].dataset.id
-  console.log('data is', data)
+
   api.update(id, data, event)
     .then(ui.onUpdateUploadSuccess)
     .then(() => onGetUploadsAfterDelete())
     .catch(ui.onUpdateUploadFailure)
+
+  $('form').trigger('reset')
 }
 
 const onHandlebarDelete = (event) => {

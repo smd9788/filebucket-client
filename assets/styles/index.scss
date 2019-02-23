@@ -21,32 +21,30 @@ border-radius: 15px 50px;
 padding: .5rem 2rem;
 }
 
-.btn {
+.nav-active {
   background-color: $secondary-color;
   color: $primary-color;
 }
 
-.card {
-  margin: 0;
-  padding: 0;
-  width: 20rem;
-}
-
-.card-body {
-  line-height: normal;
-  width: 20rem;
-}
-
-.card-img-top {
-  height: 20rem;
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 20rem;
-}
-
-.card-title {
-  font-size: 2rem;
-}
+// .card {
+//   padding: 0;
+//   width: 20rem;
+// }
+//
+// .card-body {
+//   line-height: normal;
+//   // width: 20rem;
+// }
+//
+// .card-img-top {
+//   height: 20rem;
+//   vertical-align: middle;
+//   width: 20rem;
+// }
+//
+// .card-title {
+//   font-size: 2rem;
+// }
 
 .home-container {
     margin-top: 3vh;

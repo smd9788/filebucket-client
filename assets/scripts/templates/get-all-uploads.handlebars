@@ -1,18 +1,16 @@
 {{#each uploads as |upload|}}
 
   <div data-id="{{upload._id}}">
-    <div class="card">
+    <div class="card" style="width: 18rem; margin-top: 2rem;">
       <img class="card-img-top" data-url="{{upload.url}}" src="{{upload.url}}" alt="Card image cap">
 
       <div class="card-body">
 
         <section data-id="{{upload._id}}">
           <h6 class="card-title" data-id="{{upload._id}}">{{upload.title}}</h6>
-          <p class="card-createDate">created on:{{upload.createdAt}}</p>
-          <p class="card-updateDate">updated on:{{upload.updatedAt}}</p>
-          <p class="card-tag">tags: {{upload.tag}}</p>
-
-
+          <p class="card-text">created on:{{upload.createdAt}}</p>
+          <p class="card-text">updated on:{{upload.updatedAt}}</p>
+          <p class="card-text">Tags: {{upload.tag}}</p>
         </section>
       </div>
 
