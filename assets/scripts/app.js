@@ -20,10 +20,14 @@ $(() => {
   $('#toggle-sign-in-btn').on('click', function () {
     $('.user-sign-up').hide()
     $('.user-sign-in').show()
+    // $('#toggle-sign-up-button').removeClass('btn-secondary').addClass('btn-outline-secondary')
+    // $('#toggle-sign-in-button').removeClass('btn-outline-secondary').addClass('btn-secondary')
   })
   $('#toggle-sign-up-btn').on('click', function () {
     $('.user-sign-in').hide()
     $('.user-sign-up').show()
+    // $('#toggle-sign-in-button').removeClass('btn-secondary').addClass('btn-outline-secondary')
+    // $('#toggle-sign-up-button').removeClass('btn-outline-secondary').addClass('btn-secondary')
   })
 
   $('#sign-up').on('submit', authEvents.onSignUp)

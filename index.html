@@ -42,40 +42,40 @@
   <!-- Login Page with signup/login toggle-->
   <div class="home-container container d-flex h-100">
     <div class="jumbotron w-100 h-100">
-      <h5 class="display-4 user-sign-up">Sign Up:</h5>
+      <h5 class="display-4 user-sign-up">Sign Up</h5>
 
 
               <form id="sign-up" class="user-sign-up">
                 <div class="form-group">
-                  <label>Email:</label>
+                  <label>Email</label>
                   <input type="email" name="credentials[email]" class="form-control" placeholder="Enter Email">
                 </div>
                 <div class="form-group">
-                  <label>Password:</label>
+                  <label>Password</label>
                   <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
                 </div>
                 <div class="form-group">
-                  <label>Confirm Password:</label>
+                  <label>Confirm Password</label>
                   <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary">Register</button>
               </form>
 
           <!-- User-Sign-In Form -->
 
-            <h5 class="display-4 user-sign-in">Log In:</h5>
+            <h5 class="display-4 user-sign-in">Log In</h5>
               <form id="sign-in" class="user-sign-in">
           <div class="form-group">
-          <label>Email:</label>
+          <label>Email</label>
           <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
           </div>
 
           <div class="form-group">
-          <label>Password:</label>
+          <label>Password</label>
           <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
 
-          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="submit" class="btn btn-primary">Log In</button>
               </form>
               <!-- footer -->
               <hr class="my-4">
@@ -115,13 +115,13 @@
     </div>
   </div>
 
-<div class="main-container container">
+<div class="main-container container-fluid">
   <!-- IMAGE UPLOAD FORM -->
-  Create Upload
-  <form id='upload-form' enctype="multipart/form-data">
-    <input name="image" type="file">
-    <input name="title" type="text" placeholder="Title" required>
-    <select name="tag">
+  <nav class="navbar navbar-light bg-light d-flex justify-content-center">
+  <form id='upload-form' class="form-inline" enctype="multipart/form-data">
+    <input name="image" type="file" class="btn btn-outline-dark mx-3">
+    <input name="title" type="text" class="form-control mx-sm-3" placeholder="Title" required>
+    <select name="tag" class="btn btn-outline-dark mx-3 my-2 my-sm-0">
       <option value="" disabled selected>Select Tag</option>
       <option value="Vacation">Vacation</option>
       <option value="Food">Food</option>
@@ -134,11 +134,12 @@
       <option value="Tech">Tech</option>
       <option value="Miscellaneous">Miscellaneous</option>
     </select>
-    <input type="submit">
+    <input type="submit" class="btn btn-outline-success mx-3 my-2 my-sm-0">
   </form>
+</nav>
+  <div id="user-message"></div>
+  <div class="card-deck mx-4 d-flex justify-content-around" id="upload-cards"></div>
 </div>
-<div id="user-message"></div>
-<div class="card-deck" id="upload-cards"></div>
 </body>
 
 </html>
