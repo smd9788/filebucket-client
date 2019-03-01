@@ -43,6 +43,7 @@ const onDeleteUploadSuccess = function () {
 const onDeleteUploadFailure = function () {
   $('#user-message').html('Delete Request Failed, Please Try Again')
   $('#purchase-destroy input').val('')
+  setTimeout(function () { $('#user-message').html('') }, 3000)
 }
 
 const onUpdateUploadSuccess = function (id, data, event) {
@@ -51,11 +52,14 @@ const onUpdateUploadSuccess = function (id, data, event) {
   $('.modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+
+  setTimeout(function () { $('#user-message').html('') }, 3000)
 }
 
 const onUpdateUploadFailure = function (response) {
   $('#user-message').html('Update Request Failed, Please Try Again')
   $('#purchase-update input').val('')
+  setTimeout(function () { $('#user-message').html('') }, 3000)
 }
 
 const onGetUploadsAfterDeleteSuccess = function (data) {
