@@ -7,7 +7,6 @@ const createUploadSuccess = function (apiResponse) {
   $('.alert').alert('close')
 
   $('#upload-cards').html(`<img src='${apiResponse.upload.url}'/>`)
-  console.log(apiResponse)
 }
 
 const createUploadFailure = function () {
@@ -21,7 +20,6 @@ const createUploadFailure = function () {
 }
 
 const getUploadsSuccess = (data) => {
-  console.log('data is', data)
   const getUploadsHtml = getUploadsTemplate({
     uploads: data.uploads
   })
@@ -29,7 +27,6 @@ const getUploadsSuccess = (data) => {
 }
 
 const getAllUploadsSuccess = (data) => {
-  console.log('data is', data)
   const getUploadsHtml = getAllUploadsTemplate({
     uploads: data.uploads
   })

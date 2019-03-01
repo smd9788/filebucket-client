@@ -16,7 +16,6 @@ const onCreateUpload = function (event) {
 
 const onGetUploads = (uploadData) => {
   event.preventDefault()
-  console.log(uploadData)
   api.getUploads(uploadData)
     .then(ui.getAllUploadsSuccess)
     .catch(ui.failure)
@@ -61,7 +60,6 @@ const onHandlebarDelete = (event) => {
 
 const onGetMyStuff = (uploadData) => {
   event.preventDefault()
-  console.log(uploadData)
   api.getOwnerUploads(uploadData)
     .then(ui.getUploadsSuccess)
     .catch(ui.failure)
