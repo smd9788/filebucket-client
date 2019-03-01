@@ -47,7 +47,7 @@ const onDeleteUploadFailure = function () {
 
 const onUpdateUploadSuccess = function (id, data, event) {
   $('#content').html('')
-  $('#user-message').html('Successfully Updated Purchase')
+  $('#user-message').html('Successfully Updated')
   $('.modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
